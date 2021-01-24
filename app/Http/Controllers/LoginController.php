@@ -29,7 +29,7 @@ class LoginController extends Controller
         ], 404);
     }
     //Создаем токен
-    $token = $user->createToken('my-app-token')->plainTextToken;
+    $token = $user->createToken('token')->plainTextToken;
 
     //Массив ответа. передаем пользователя и его временный токен
     $response = [
@@ -60,7 +60,7 @@ class LoginController extends Controller
     event(new Registered($user));
 
     //создаем токен пользователя
-    $token = $user->createToken('my-app-token')->plainTextToken;
+    $token = $user->createToken('token')->plainTextToken;
 
     //Массив ответа. передаем пользователя и его временный токен
     $response = [
